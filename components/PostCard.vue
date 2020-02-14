@@ -1,5 +1,5 @@
 <template>
-  <a class="card bm--card-equal-height" href="#">
+  <div class="card bm--card-equal-height">
     <header class="card-header">
         <div class="card-header-title has-text-grey" v-if="title">
             {{title}}
@@ -8,11 +8,9 @@
       
     <div class="card-content">
         <div class="content">
-            <b-icon v-if="feature_image"
-                :icon="feature_image"
-                size="is-medium"
-                type="is-primary"
-            />
+            <figure v-if="feature_image" class="image is-3by2">
+                <img :src="feature_image">
+            </figure>
             <b-icon v-else
                 icon="github-circle"
                 size="is-medium"
@@ -23,9 +21,9 @@
     </div>
 
     <footer class="card-footer">
-        <a href="#" class="card-footer-item">{{read_time}} min</a>
+        <a v-if="Number.isInteger(read_time)" href="#" class="card-footer-item">{{read_time}} min</a>
     </footer> 
-  </a>
+  </div>
 </template>
 
 <script>
@@ -44,7 +42,7 @@ export default {
             required: false
         },
         read_time:{
-            type: String,
+            type: Number,
             required: true
         }
     }

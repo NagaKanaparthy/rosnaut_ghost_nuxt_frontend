@@ -1,8 +1,7 @@
 <template>
   <section class="section">
     <div class="columns is-desktop">
-      <div v-for="post in posts" track-by="index" class="column is-4">
-        <h1 v-if="post.index!=-1">{{post.index}}</h1>
+      <div v-for="post in posts" track-by="index" class="column">
         <PostCard
           :title="post.title"
           :content="post.excerpt"
@@ -19,7 +18,7 @@ import PostCard from "~/components/PostCard"
 import {getPosts} from "~/middleware/ghost"
 export default {
   name: 'HomePage',
-
+  layout: "space",
   components: {
     PostCard
   },

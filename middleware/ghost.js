@@ -32,3 +32,9 @@ export async function getAuthor(authorSlug){
         .read({slug: authorSlug})
         .catch(err => {console.error(err);});
 }
+
+export async function getSettings(){
+    return await api.settings
+        .browse()
+        .catch(err=> {console.error(err);});
+}
