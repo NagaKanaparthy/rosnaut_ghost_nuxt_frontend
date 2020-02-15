@@ -1,7 +1,7 @@
 <template>
   <section class="columns is-desktop">
     <section class="column">
-        <div v-for="post in top" class="column">
+        <div v-for="post in top" v-bind:key="post.id" class="column">
           <PostCard
               :title="post.title"
               :url="post.url"
@@ -12,7 +12,7 @@
         </div>
     </section>
     <section class="column">
-        <div v-for="post in bot" class="column">
+        <div v-for="post in bot" v-bind:key="post.id" class="column">
           <PostCard
               :title="post.title"
               :url="post.url"
