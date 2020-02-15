@@ -1,29 +1,26 @@
 <template>
-  <div class="card bm--card-equal-height">
-    <header class="card-header">
-        <div class="card-header-title has-text-grey" v-if="title">
-            {{title}}
+    <a class="card bm--card-equal-height" :href="url">
+        <header class="card-header">
+            <p class="card-header-title has-text-grey" v-if="title">
+                {{title}}
+            </p>
+        </header>
+        
+        <div class="card-content">
+            <div class="content">
+                <figure v-if="feature_image" class="image is-3by2">
+                    <img :src="feature_image">
+                </figure>          
+                <div v-if="content" class="is-clipped has-text-centered">{{content}}</div>
+                <div v-else class="is-clipped has-text-centered">Coming Soon</div>
+            </div>
         </div>
-    </header>
-      
-    <div class="card-content">
-        <div class="content">
-            <figure v-if="feature_image" class="image is-3by2">
-                <img :src="feature_image">
-            </figure>
-            <b-icon v-else
-                icon="github-circle"
-                size="is-medium"
-                type="is-primary"
-            />            
-            <div v-if="content" class="is-clipped">{{content}}</div>
-        </div>
-    </div>
 
-    <footer class="card-footer">
-        <a v-if="Number.isInteger(read_time)" href="#" class="card-footer-item">{{read_time}} min</a>
-    </footer> 
-  </div>
+        <footer class="card-footer">
+            <p v-if="Number.isInteger(read_time)" class="card-footer-item">{{read_time}} min</p>
+            <p v-else class="card-footer-item">TBA</p>
+        </footer>
+    </a>
 </template>
 
 <script>
@@ -33,9 +30,13 @@ export default {
             type: String,
             required: true
         },
-        content:{
+        url:{
             type: String,
             required: true
+        },
+        content:{
+            type: String,
+            required: false
         },
         feature_image:{
             type: String,
@@ -43,7 +44,7 @@ export default {
         },
         read_time:{
             type: Number,
-            required: true
+            required: false
         }
     }
 }

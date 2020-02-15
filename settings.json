@@ -1,0 +1,37 @@
+{
+  "title": "Rosnaut",
+  "description": "A blog focused on robotics and ROS developments. ",
+  "logo": null,
+  "icon": null,
+  "cover_image": null,
+  "facebook": null,
+  "twitter": "@rosnaut",
+  "lang": "en",
+  "timezone": "America/Denver",
+  "navigation": [
+    {
+      "label": "Software Services",
+      "url": "/software-services/"
+    },
+    {
+      "label": "Tutoring",
+      "url": "/tutoring/"
+    },
+    {
+      "label": "Resume",
+      "url": "/resume/"
+    }
+  ],
+  "secondary_navigation": [],
+  "meta_title": "RosNaut",
+  "meta_description": "A blog focused on robotics and aerospace software engineering topics. Topics include  ROS package reviews, ML Paper Reading Streams, and development posts.",
+  "og_image": null,
+  "og_title": null,
+  "og_description": null,
+  "twitter_image": null,
+  "twitter_title": null,
+  "twitter_description": null,
+  "url": "http://nvktrades.com:80/",
+  "codeinjection_head": null,
+  "codeinjection_foot": null
+}

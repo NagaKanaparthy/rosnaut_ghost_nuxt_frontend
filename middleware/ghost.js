@@ -10,7 +10,7 @@ export async function getPosts(){
     return await api.posts
         .browse({
             include: "tags.authors",
-            limit:"6"
+            limit:"all"
         })
         .catch(err=> {console.error(err);});
 }
@@ -21,9 +21,15 @@ export async function getPages(){
         .catch(err => {console.error(err);});
 }
 
-export async function getSinglePost(postSlug){
+export async function getSinglePostById(id){
     return await api.posts
-        .read({slug: postSlug})
+        .read({id: id})
+        .catch(err => {console.error(err);});
+}
+
+export async function getSinglePostBySlug(slug){
+    return await api.posts
+        .read({slug: slug})
         .catch(err => {console.error(err);});
 }
 
